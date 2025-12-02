@@ -147,7 +147,8 @@ class  Score:
     """
     def __init__(self, score: int =0):
         """
-        スコアを初期化する   
+        スコアを初期化する
+        引数 score：初期スコア（デフォルト0） 
         """
         self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)  # フォントオブジェクトの生成
         self.score = 0 # 初期スコア
@@ -160,16 +161,16 @@ class  Score:
         スコアを画面に表示する
         引数 screen：画面Surface
         """
-        score_img = self.fonto.render(f"スコア:{self.score}", 0, (0, 0, 255))
-        screen.blit(score_img, [100, 600]) 
+        score_img = self.fonto.render(f"スコア:{self.score}", 0, (0, 0, 255))  # スコア画像Surfaceの生成
+        screen.blit(score_img, [100, 600])  # スコア画像Rectの位置設定
 
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))    
     bg_img = pg.image.load("fig/pg_bg.jpg")
-    bird = Bird((300, 200))
-    bomb = Bomb((255, 0, 0), 10)
+    bird = Bird((300, 200))  # こうかとんクラスのインスタンス生成
+    bomb = Bomb((255, 0, 0), 10)  # 爆弾クラスのインスタンス生成
     # bomb = Bomb((255, 0, 0), 10)
     # bombs = []
     # for _ in range(NUM_OF_BOMBS):
